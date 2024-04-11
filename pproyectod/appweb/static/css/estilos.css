@@ -1,0 +1,15 @@
+.container {
+    
+    margin: 0 auto; /* Esto centrará horizontalmente el contenedor */
+    width: 80%; /* Puedes ajustar este ancho según tus preferencias */
+    text-align: center; /* Esto centrará el contenido del footer */
+    font-family: Arial, sans-serif; /* Cambia la fuente del texto */
+    color: rgb(239, 245, 248); /* Cambia el color del texto */
+}
+
+footer p {
+   
+    margin: 0; /* Elimina el margen predeterminado para el párrafo dentro del footer */
+    padding: 20px 0; /* Agrega espacio alrededor del texto dentro del footer */
+}
+
