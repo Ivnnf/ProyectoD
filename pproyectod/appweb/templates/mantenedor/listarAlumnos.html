@@ -1,0 +1,65 @@
+{% extends 'baseAdmin.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block contenido3 %}
+
+<script>
+    function eliminarusuario(rut_Usuario)
+    {
+    Swal.fire({
+        "title": "Advertencia",
+        "text": "¿Esta seguro que desea eliminar a un Usuario?",
+        "icon": "question",
+        "showCancelButton": true,
+        "cancelButtonText": "No, cancelar",
+        "confirmButtonText":"Si, eliminar"
+    }).then(function(result){
+
+        if(result.isConfirmed)
+        {
+        window.location.href="/eliminar_usuario/"+rut_Usuario+"/";
+        }
+
+    })
+    }
+</script>
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="mt-4">Lista de Usuarios</h2>  
+    </div>
+
+
+<br><br>
+<table class="table">
+<thead>
+        <tr>
+        <th scope="col">Rut</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">correo</th>
+        <th scope="col">Opciones</th>
+
+    
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in usuarios %}
+    <tr>
+        <th scope="row">{{p.rut_Usuario}}</th>
+        <td>{{p.nombre_Usuario}}</td>
+        <td>{{p.apellido_Usuario}}</td>
+        <td>{{p.correo}}</td>
+        <td>
+            <a href="{% url 'modificarAlumno' p.rut_Usuario %}" class="btn btn-success btn-sm" >Modificar </a>
+            <a href="#" onclick="eliminarusuario('{{p.rut_Usuario}}')" class="btn btn-danger btn-sm" >Eliminar </a>
+
+        </td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+    </table>
+</div>
+
+{% endblock %}

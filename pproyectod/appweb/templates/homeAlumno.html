@@ -3,21 +3,30 @@
 {% load crispy_forms_tags %}
 {% block contenido4 %}
 
+
+<div class="container">
+    <div class="col-10">
+        <form class="d-flex" role="search" action="">
+            <input class="form-control me-5" type="search" placeholder="......" aria-label="Search">
+            <button class="btn btn-outline-success me-2" type="submit">Buscar</button>
+        </form><br>
+        <a href="{% url 'postAlumno'%}"><button type="button" class="btn btn-primary" >Crear Publicacion</button></a>
+        
+        <button type="button" class="btn btn-success">Buscar Grupo</button>
+    </div>
+</div>
+
 <div class="container">
     <div class="row">
-        <div class="col-10">
-            <div class="card" style="width: 18rem;">
-                <img src="{% static '../static/imagenes/im2.png' %} " class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">
-            
-                    Bienvenido Alumno</p>
-                </div>
-              </div>
+        <div class="col-4">
+            <a href="{% url 'homeAlumno' %}">
+                <img src="{% static '../static/imagenes/iconoGrupo.jpg' %}" class="d-block w-50 rounded-circle" style="margin-top: 20px; width: 100px">
+            </a>
         </div>
     </div>
 
 </div>
+
 
 
 {% endblock %}

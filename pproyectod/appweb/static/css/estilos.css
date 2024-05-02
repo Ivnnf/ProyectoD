@@ -7,9 +7,20 @@
     color: rgb(239, 245, 248); /* Cambia el color del texto */
 }
 
-footer p {
-   
+footer p { 
     margin: 0; /* Elimina el margen predeterminado para el párrafo dentro del footer */
     padding: 20px 0; /* Agrega espacio alrededor del texto dentro del footer */
 }
 
+.login {
+    background-color: #eae6e6; /* Cambia el color según tus preferencias */
+}
+
+.nav-item .nav-link {
+    color: #22abbd; /* Cambia el color según tus preferencias */
+}
+
+.card-img-Alum {
+    max-width: 200px; /* Ajusta el tamaño máximo según tus preferencias */
+    height: auto; /* Esto permite que la altura se ajuste automáticamente */
+}

@@ -8,3 +8,4 @@ from .models import *
 
 admin.site.register(Contacto)
 admin.site.register(Datos_Alumnos)
+admin.site.register(Datos_Moderador)
