@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!m(%1^g)%r!^8p*u^nqc_d8aw@zomu9q3dq5!an27^9f-@&1zx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'
 
-ALLOWED_HOSTS = ["ivnn.pythonanywhere.com "]
+ALLOWED_HOSTS = []
 
 # VARIABLES DE REDIRECCION DE LOGIN Y LOGOUT
 

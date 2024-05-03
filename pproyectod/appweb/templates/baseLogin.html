@@ -20,13 +20,21 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7/dist/sweetalert2.all.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7/dist/sweetalert2.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static '../static/css/estilos.css' %}">
-        
+        <script src="{% static '../static/js/iconos.js' %}"></script>
+        <link href="https://cdn.jsdelivr.net/npm/mdb-ui-kit@3.6.0/dist/css/mdb.min.css" rel="stylesheet">
 
+<!-- Enlaza los estilos de Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const { Ripple, initMDB } = mdbui;
+    initMDB({ Ripple });
+    });
+</script>
         <style> body{
             text-align: center;
             background-color: rgba(11, 61, 197, 0.785);
-        } </style>
-       
+        } </style>  
 </head>
 
 <body>
@@ -34,8 +42,8 @@
 <header>
     <div class="container">
         <div class="row">
-            <div class="col-10">
-                <nav class="navbar navbar-expand-lg bg-body-tertiary"  data-bs-theme="dark" id="barranav">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark" id="barranav">
                     
                     <div class="container-fluid">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -60,8 +68,8 @@
                     </div>  
                 </nav>
             </div>
-            <div class="col-2">
-                <img src="{% static '../static/imagenes/logoInicio.jpg' %}" class="d-block w-100 rounded-circle" style="margin-top: 20px;">
+            <div class="col-1">
+                <img src="" >
             </div>
             
 
@@ -81,17 +89,87 @@
 
 </main>
 
-<div>
+
     
-    <footer class="container">
-        <p>© 2023–2024 Company MMT, Inc.
-        </p>
+<br>
+    <footer class="bg-custom-color text-center">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2023–2024 Company MMT, Inc.
+        <a class="text-body" href=""></a>
+        </div>
+        <!-- Copyright -->
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+            
+            <!-- Facebook -->
+            <a
+            data-mdb-ripple-init
+            class="btn text-white btn-floating m-1"
+            style="background-color: #3b5998;"
+            href="#!"
+            role="button"
+            ><i class="fab fa-facebook-f"></i
+            ></a>
+    
+            <!-- Twitter -->
+            <a
+            data-mdb-ripple-init
+            class="btn text-white btn-floating m-1"
+            style="background-color: #55acee;"
+            href="#!"
+            role="button"
+        ><i class="fab fa-twitter"></i
+            ></a>
+    
+            <!-- Google -->
+            <a
+            data-mdb-ripple-init
+            class="btn text-white btn-floating m-1"
+            style="background-color: #dd4b39;"
+            href="#!"
+            role="button"
+            ><i class="fab fa-google"></i
+            ></a>
+    
+            <!-- Instagram -->
+            <a
+            data-mdb-ripple-init
+            class="btn text-white btn-floating m-1"
+            style="background-color: #ac2bac;"
+            href="#!"
+            role="button"
+            ><i class="fab fa-instagram"></i
+            ></a>
+    
+            <!-- Linkedin -->
+            <a
+            data-mdb-ripple-init
+            class="btn text-white btn-floating m-1"
+            style="background-color: #0082ca;"
+            href="#!"
+            role="button"
+            ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <!-- Github -->
+            <a
+            data-mdb-ripple-init
+            class="btn text-white btn-floating m-1"
+            style="background-color: #333333;"
+            href="#!"
+            role="button"
+        ><i class="fab fa-github"></i
+            ></a>
+        </section>
+        <!-- Section: Social media -->
+        </div>
+
+        
     </footer>
-</div>
 
 
 </body>
-
-
 
 </html>

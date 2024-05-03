@@ -5,45 +5,53 @@
 {% block contenido2 %}
 
 
-
 <link rel="stylesheet" type="text/css" href="{% static '../static/css/estilos.css' %}">
 
 <div class="container">
-<div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
-        <h2>Bienvenido a Alum Unity</h2>
-        <div class="text-center">
-            Login
-            <div class="imagen1">
-                <img src="{% static '../static/imagenes/login01.png' %}" alt="" style="width: 250px; height: 250px">
+
+    <div class="container d-flex justify-content-center">
+        <div class="row mt-3" >
+            <h2>Bienvenido a Alum Unity</h2>
+            
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center align-items-center"> <!-- Alinea vertical y horizontalmente -->
+            <div class="col-4 text-center">
+                <div class="imagenlogin">
+                    <img class="d-block w-100 rounded-circle" src="{% static '../static/imagenes/logoInicio.jpg' %}" alt="" >
+                </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-body" style="color: #2674d9; background-color: #edf1f3;" >
-                <form class="login" id="formularioLogin" action="" method="POST">
-
-                    {% csrf_token %}
-                    {{ form | crispy }}
-
-                <div class="col-12">
-
-                    <button type="submit" style="width: 100%" class="btn btn-warning">Inicia sesión</button>
-                    
-                </div>
-                    
-                    <br>
-                    <b><a href="{% url 'registroUsuarios' %}">No tienes cuenta? Registrate aqui</a></b>
-                    
-                </form>
-    
-            </div>
-        </div>    
-    
-
     </div>
-</div> 
-</div>
+    
+    <div class="container d-flex justify-content-center">
+        <div class="col-lg-8" >
+            <h2>Inicia sesión</h2>
+            <div class="card">
+                <div class="card-body" style="color: #080808; background-color: #eae6e6;" >
+                    <form class="login" id="formularioLogin" action="" method="POST">
+    
+                        {% csrf_token %}
+                        {{ form | crispy }}
+    
+                    <div class="col-12">
+    
+                        <button type="submit" style="width: 100%" class="btn btn-outline-success">Inicia sesión</button>
+                        
+                    </div>
+                    <br>
+                        <b><a href="{% url 'registroUsuarios' %}">No tienes cuenta? Registrate aqui</a></b>
+                        
+                    </form>
+        
+                </div>
+            </div>   
+    
+        </div>
+    </div>
+        
+    </div>
 
 
 

@@ -24,3 +24,11 @@ footer p {
     max-width: 200px; /* Ajusta el tamaño máximo según tus preferencias */
     height: auto; /* Esto permite que la altura se ajuste automáticamente */
 }
+
+
+
+.bg-custom-color {
+    background-color: rgba(67, 105, 211, 0.785);
+}
+
+
