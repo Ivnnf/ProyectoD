@@ -5,7 +5,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
     <title>Alumno</title>
+    <link rel="icon" type="image/x-icon" href="{% static '../static/imagenes/logoInicio.jpg' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -15,7 +17,7 @@
         integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
         crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
-        {% load static %}
+        
         <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script> 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7/dist/sweetalert2.all.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7/dist/sweetalert2.min.css" rel="stylesheet">
@@ -66,7 +68,12 @@
                                     <a class="nav-link active" aria-current="page" href="{% url 'publicaciones' %}">Publicaciones</a>
                                 </li>
                             </ul>
-                        
+                            <div class="nav-item">
+                                <button type="button" class="btn btn-primary">
+                                    Notificaciones <span class="badge text-bg-secondary">20</span>
+                                </button>
+                            </div>
+                            
                             <div class="d-flex align-items-center">       
                             <form action="{% url 'logout' %}" method="post">{% csrf_token %}<button type="submit" class="btn btn-light ml-3">Cerrar sesión</button></form>
                             </div>
@@ -75,7 +82,7 @@
                     </div>  
                 </nav>
             </div>
-            <div class="col-2">
+            <div class="col-1">
                 <a href="{% url 'homeAlumno' %}">
                     <img src="{% static '../static/imagenes/logoInicio.jpg' %}" class="d-block w-100 rounded-circle" style="margin-top: 20px;">
                 </a>
@@ -99,10 +106,13 @@
 
 </main>
 
-<div>
+<div  class="container">
+    <div class="row">
+        <footer>
+            <p>© 2023–2024 Company MMT, Inc.
+            </p>
+        </footer>
+    </div>
     
-    <footer class="container">
-        <p>© 2023–2024 Company MMT, Inc.
-        </p>
-    </footer>
+
 </div>

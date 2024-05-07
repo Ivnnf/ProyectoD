@@ -13,21 +13,47 @@
 </div>
 
 <div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form method="get">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control" placeholder="Buscar..." name="buscar">
+                        <span class="input-group-list">
+                            <i class="icon icon-search"></i>
+                            <button type="submit" class="btn btn-outline-success me-2">Buscar</button>
+                        </span>
+                    </div>
+                </div> 
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+<br>
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-8">
-            {% for post in publicaciones %}
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ post.nombre_post }}</h5>
-                        <p class="card-text">{{ post.descripcion_post }}</p>
-                        {% if post.imagen_post %}
-                            <img src="{{ post.imagen_post.url }}" alt="Imagen del Post" class="card-img-Alum">
-                        {% else %}
-                            <p>No hay imagen disponible</p>
-                        {% endif %}
+            {% if publicaciones %}
+                {% for post in publicaciones %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.nombre_post }}</h5>
+                            <p class="card-text">{{ post.descripcion_post }}</p>
+                            {% if post.imagen_post %}
+                                <img src="{{ post.imagen_post.url }}" alt="Imagen del Post" class="card-img-Alum">
+                            {% else %}
+                                <p>No hay imagen disponible</p>
+                            {% endif %}
+                        </div>
                     </div>
+                {% endfor %}
+            {% else %}
+                <div class="alert alert-warning" role="alert">
+                    No se encontraron publicaciones con esa búsqueda.
                 </div>
-            {% endfor %}
+            {% endif %}
         </div>
     </div>
 </div>

@@ -17,22 +17,17 @@ def home(request):
 
 
 def contacto(request):
-
-    data = {
-        "form_contacto": ContactoForm,
-        "mensaje":""
-    }
-    formulario = ContactoForm(data=request.POST)
-
-    if formulario.is_valid():
-        formulario.save()
-        data["mensaje"]= " Mensaje Enviado correctamente "
-        return redirect(reverse("login")) 
+    if request.method == 'POST':
+        formulario = ContactoForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(reverse("login")) 
+        else:
+            mensaje_error = "Por favor, corrija los errores en el formulario."
+            return render(request, "contacto.html", {"form_contacto": formulario, "mensaje": mensaje_error})
     else:
-        data["mensaje"]= "Rellene los campos indicados"
-        data["form_contacto"] = formulario
-
-    return render(request, "contacto.html", data)
+        formulario = ContactoForm()
+        return render(request, "contacto.html", {"form_contacto": formulario})
 
 
 @login_required(login_url='/accounts/login/')
@@ -186,11 +181,23 @@ def postAlumnos(request):
 
 @login_required(login_url='/accounts/login/')
 def publicaciones(request):
-    publicaciones = PostAlumnos.objects.all()
+    queryset = request.GET.get("buscar")
+    
+    if queryset:
+        publicaciones = PostAlumnos.objects.filter(
+            Q(nombre_post__icontains=queryset) |
+            Q(descripcion_post__icontains=queryset)
+        ).distinct()
+        mensaje = None  # Reinicia el mensaje a None ya que hay resultados de búsqueda
+    else:
+        publicaciones = PostAlumnos.objects.all()  # Mostrar todas las publicaciones
+        mensaje = "No se encontraron publicaciones con esa búsqueda."
 
     data = {
-        "publicaciones": publicaciones
+        "publicaciones": publicaciones,
+        "mensaje": mensaje
     }
+
     return render(request, "publicaciones.html", data)
 
 @login_required(login_url='/accounts/login/')

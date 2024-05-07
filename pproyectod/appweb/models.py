@@ -4,18 +4,18 @@ from django.contrib.auth.models import Group
 # Create your models here.
 
 tipos_contacto = [
-    [0, "Consulta"],
-    [1, "Sugerencia"],
-    [2, "Problemas con tu cuenta"]
+    ["Consulta", "Consulta"],
+    ["Sugerencia", "Sugerencia"],
+    ["Problemas con tu cuenta", "Problemas con tu cuenta"]
 
 ]
 
 class Contacto(models.Model):
     nombre_contacto = models.CharField(max_length=100)
     correo_contacto = models.CharField(max_length=100)
-    telefono_contacto = models.IntegerField()
+    telefono_contacto = models.CharField(max_length=20)
     mensaje_contacto = models.TextField()
-    tipos_contacto = models.IntegerField(choices=tipos_contacto)
+    tipos_contacto = models.CharField(max_length=100,choices=tipos_contacto, default='')
     def __srt__(self):
         return self.nombre_contacto + " "+self.correo_contacto
     
@@ -24,11 +24,11 @@ class Contacto(models.Model):
 
 carreras = [
 
-    [0, "Analista Programador Computacional"],
-    [1, "Contabilidad Tributaria"],
-    [2, "Administración de Empresas"],
-    [3, "Desarrollo de Aplicaciones"],
-    [4, "ingeniería en Desarrollo de Software"],
+    ["Analista Programador Computacional", "Analista Programador Computacional"],
+    ["Contabilidad Tributaria", "Contabilidad Tributaria"],
+    ["Administración de Empresas", "Administración de Empresas"],
+    ["Desarrollo de Aplicaciones", "Desarrollo de Aplicaciones"],
+    ["ingeniería en Desarrollo de Software", "ingeniería en Desarrollo de Software"],
     
 
 ]
@@ -38,7 +38,7 @@ class Datos_Alumnos(models.Model):
     apellido_Usuario = models.CharField(max_length=50)
     rut_Usuario = models.CharField(max_length=12)
     telefono_Usuario = models.CharField(max_length=20, default='+569 ')
-    carrera_Usuario = models.IntegerField(choices=carreras, default='')
+    carrera_Usuario = models.CharField(max_length=100, choices=carreras, default='')
     semestre_Usuario = models.CharField(max_length=12,default='')
     correo = models.CharField(max_length=50)
     password = models.CharField(max_length=20)

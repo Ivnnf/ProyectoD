@@ -4,11 +4,19 @@
 
 {% block contenido %}
 
-    <div class="container mt-10">
-
-        <div class="imagen1" style="text-align: center;">
-            <img src="../static/imagenes/img5.png" alt="" style="width: 200px; height: 200px">
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="imagen1" style="text-align: center;">
+                <img src="../static/imagenes/img5.png" alt="" style="width: 200px; height: 200px">
+            </div>
+            <div class="col-4"></div>
         </div>
+    </div>
+</div>
+
+    <div class="container"> 
         {{mensaje}}
         <h2 class="text-center">Contacto</h2>
         <div class="row">
@@ -20,7 +28,7 @@
                         {% csrf_token %}
                         {{form_contacto | crispy}}
                         
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" style="width: 100%" class="btn btn-primary">Enviar</button>
                     </form> 
                 </div>             
             </div>
